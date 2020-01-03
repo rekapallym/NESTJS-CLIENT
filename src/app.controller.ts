@@ -25,7 +25,7 @@ export class AppController implements OnModuleInit {
   // Define the logic to be executed
   async getTransactionByRowId(@Param() params)  {
     this.logger.log('Param Value of Row ' + params.rowId); // Log something on every call
-    return this.grpcService.getTransactionByRowId({transLogRowId: params.rowId});
+    return this.grpcService.getTransactionByRowId({transLogRowId: params.rowId.toString()});
   }
 
 }
