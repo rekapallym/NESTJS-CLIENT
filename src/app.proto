@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package app;
+
+service AppController { 
+    rpc GetTransactionByRowId (TransactionRequest) returns (TransResponse);
+}
+
+
+
+message TransactionRequest {
+    string transLogRowId = 1;
+}
+
+message TransResponse {
+    Data  data = 1;  
+    message Data{
+        string value = 1;
+        string timestamp = 2;
+    }
+}
+
